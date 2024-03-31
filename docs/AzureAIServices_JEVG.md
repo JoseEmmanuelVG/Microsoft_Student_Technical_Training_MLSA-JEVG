@@ -1,88 +1,131 @@
-Exploración de los servicios de inteligencia artificial de Azure
+# Exploring Azure Artificial Intelligence Services
 
-Los servicios de inteligencia artificial de Azure ayudan a los usuarios a crear aplicaciones de inteligencia artificial con API y modelos listos para usar, precompilados y personalizables. En este ejercicio, echará un vistazo a uno de los servicios, Azure AI Content Safety, en Content Safety Studio.
+Azure AI services help users build AI applications with out-of-the-box, precompiled, customizable APIs and models. In this exercise, you'll take a look at one of the services, Azure AI Content Safety, in Content Safety Studio.
 
-Content Safety Studio le permite explorar cómo se puede moderar el contenido de texto e imagen. Puede ejecutar pruebas en texto o imágenes de muestra y obtener una puntuación de gravedad que va de segura a alta para cada categoría. En este ejercicio de laboratorio, creará un recurso de servicio único en Content Safety Studio y probará sus funcionalidades.
+Content Safety Studio allows you to explore how text and image content can be moderated. You can run tests on sample text or images and get a severity score ranging from safe to high for each category. In this lab exercise, you will create a single service resource in Content Safety Studio and test its functionalities.
 
+**Note** The goal of this exercise is to get a general idea of how Azure AI services are provisioned and used. Content security is used as an example, but you are not expected to gain a complete understanding of content security in this exercise.
 
-Nota El objetivo de este ejercicio es obtener una idea general de cómo se aprovisionan y usan los servicios de Azure AI. La seguridad del contenido se utiliza como ejemplo, pero no se espera que obtenga un conocimiento completo de la seguridad del contenido en este ejercicio.
+## Associating a resource with the study
 
+Before using the study, you must associate an Azure AI services resource with the study. Depending on the studio, you may need a specific single service resource or you may be able to use a general multi-service resource. In the case of Content Safety Studio, you can use the service by creating a single service content safety resource or a general Azure AI Services multi-service resource. In the steps below, we will create a single-service content safety resource.
 
-Asociar un recurso con el estudio
-Antes de usar el estudio, debe asociar un recurso de servicios de Azure AI con el estudio. Dependiendo del estudio, es posible que necesite un recurso de servicio único específico o que pueda usar un recurso general de varios servicios. En el caso de Content Safety Studio, puede usar el servicio mediante la creación de un recurso de seguridad de contenido de un solo servicio o un recurso multiservicio general de Azure AI Services. En los pasos que se indican a continuación, crearemos un recurso de seguridad de contenido de un solo servicio.
+<p align="center">            
+<img src="image-17.png" width="500" height="500">
+<br >
+<em><strong> 
+Initial setup for Content Safety Studio.
+</em></strong>  
+<br />
+</p>
 
-![alt text](image-17.png)
+At the top right of the screen, click on the Settings icon.
 
+<p align="center">            
+<img src="image-18.png" width="500" height="500">
+<br >
+<em><strong> 
+Settings icon on Content Safety Studio.
+</em></strong> 
+<br />
+</p>
 
+On the Create Content Security in Azure Portal page, you must configure several details to create the resource. Configure it with the following settings: Subscription: your Azure subscription. Resource Group: select or create a resource group with a unique name. Region: choose any available region. Name: type a unique name. Rate plan: Free F0
 
-En la parte superior derecha de la pantalla, haga clic en el icono Configuración.
-![alt text](image-18.png)
+<p align="center">            
+<img src="image-19.png" width="500" height="500">
+<br >
+<em><strong> 
+Resource creation settings.
+</em></strong> <br />
+</p>
 
+Select Review + Create and review the settings. Then select Create. The screen will indicate when the implementation is complete. Congratulations! You have just created or provisioned an Azure AI services resource. The one you provisioned in particular is a single-service content security service resource.
 
-En la página Crear seguridad de contenido en Azure Portal, debe configurar varios detalles para crear el recurso. Configúrelo con los siguientes ajustes:
-Suscripción: su suscripción de Azure.
-Grupo de recursos: seleccione o cree un grupo de recursos con un nombre único.
-Región: elija cualquier región disponible.
-Nombre: escriba un nombre único.
-Plan de tarifa: Free F0
+<p align="center">            
+<img src="image-20.png" width="500" height="500">
+<br ><em><strong> 
+Confirmation of resource creation.</em></strong> 
+<br />
+</p>
+When the deployment is complete, open a new tab and return to Content Safety Studio.
 
-![alt text](image-19.png)
+<p align="center">            
+<img src="image-21.png" width="500" height="500">
+<br ><em><strong>Navigation back to Content Safety Studio.</strong></em><br />
+</p>
 
-Seleccione Revisar + Crear y revise la configuración. A continuación, seleccione Crear. La pantalla indicará cuándo se ha completado la implementación.
-¡Felicidades! Acaba de crear o aprovisionar un recurso de servicios de Azure AI. El que ha aprovisionado en concreto es un recurso de servicio de seguridad de contenido de un solo servicio.
+Select the Settings icon at the top right of the screen again. This time, you should see that the newly created resource has been added to the list.
 
-![alt text](image-20.png)
+On the Content Safety Studio Configuration page, select the Azure AI service resource you just created and click Use resource at the bottom of the screen. You will return to the studio's home page. You can now start using the studio with the newly created resource.
 
-Cuando se complete la implementación, abra una nueva pestaña y vuelva a Content Safety Studio.
+<p align="center">            
+<img src="image-22.png" width="500" height="500">
+<br ><em><strong>Selecting the newly created resource for use.</strong></em><br />
+</p>
 
-![alt text](image-21.png)
+## Test text moderation in Content Safety Studio
 
-Vuelva a seleccionar el icono de Configuración en la parte superior derecha de la pantalla. Esta vez, debería ver que el recurso recién creado se ha agregado a la lista.
+On the Content Safety Studio home page, under Run moderation tests, go to the Moderate text content box and click Test it.
 
-En la página Configuración de Content Safety Studio, seleccione el recurso de servicio Azure AI que acaba de crear y haga clic en Usar recurso en la parte inferior de la pantalla. Volverás a la página de inicio del estudio. Ahora puede comenzar a usar el estudio con el recurso recién creado.
+<p align="center">            
+<img src="image-24.png" width="500" height="500">
+<br ><em><strong>Moderate text content test initiation.</strong></em><br />
+</p>
 
-![alt text](image-22.png)
+Under Run a simple test, click Content Safe. Notice that the text is displayed in the box below.
 
+<p align="center">            
+<img src="image-23.png" width="500" height="500">
+<br ><em><strong>Preparation for a simple test of content safety.</strong></em><br />
+</p>
 
-Pruebe la moderación de texto en Content Safety Studio
+Click Run Test. When running a test, the deep learning model of the content security service is called. The deep learning model has already been trained to recognize unsecured content.
 
-En la página principal de Content Safety Studio, en Ejecutar pruebas de moderación, vaya al cuadro Moderar contenido de texto y haga clic en Pruébelo.
-![alt text](image-24.png)
+<p align="center">            
+<img src="image-25.png" width="500" height="500">
+<br ><em><strong>Running the content safety test.</strong></em><br />
+</p>
 
-En Ejecutar una prueba simple, haga clic en Contenido seguro. Observe que el texto se muestra en el cuadro de abajo.
-![alt text](image-23.png)
+In the Results pane, inspect the results. There are four severity levels, from safe to high, and four types of harmful content. Does the Content Safety AI service find this sample acceptable or not? What is important to keep in mind is that the results are within a confidence interval. A well-trained model, such as one of Azure AI's out-of-the-box models, can return results that have a high probability of matching what a human would label as a result. Each time a test is run, the model is called again.
 
-Haga clic en Ejecutar prueba. Al ejecutar una prueba, se llama al modelo de aprendizaje profundo del servicio de seguridad de contenido. El modelo de aprendizaje profundo ya ha sido entrenado para reconocer contenido no seguro.
-![alt text](image-25.png)
+<p align="center">            
+<img src="image-26.png" width="500" height="500">
+<br ><em><strong>Results pane showing test outcomes.</strong></em><br />
+</p>
 
+Now try another sample. Select the text in Violent content with misspellings. Check that the content is displayed in the box below.
 
-En el panel Resultados, inspeccione los resultados. Hay cuatro niveles de gravedad, desde seguro hasta alto, y cuatro tipos de contenido dañino. ¿El servicio de IA de seguridad de contenido considera que esta muestra es aceptable o no? Lo que es importante tener en cuenta es que los resultados están dentro de un intervalo de confianza. Un modelo bien entrenado, como uno de los modelos listos para usar de Azure AI, puede devolver resultados que tienen una alta probabilidad de coincidir con lo que un humano etiquetaría como resultado. Cada vez que se ejecuta una prueba, se vuelve a llamar al modelo.
-![alt text](image-26.png)
+<p align="center">            
+<img src="image-27.png" width="500" height="500">
+<br ><em><strong>Selecting a new sample for testing.</strong></em><br />
+</p>
 
+Click Run Test and inspect the results again in the Results pane.
 
+<p align="center">            
+<img src="image-28.png" width="500" height="500">
+<br ><em><strong>Inspecting the results of the second test.</strong></em><br />
+</p>
 
+You can run tests on all provided samples and then inspect the results.
 
-Ahora pruebe con otra muestra. Seleccione el texto en Contenido violento con faltas de ortografía. Compruebe que el contenido se muestra en el cuadro siguiente.
-![alt text](image-27.png)
+## Take a look at the keys and the connection point
 
-Haga clic en Ejecutar prueba e inspeccione de nuevo los resultados en el panel Resultados.
-![alt text](image-28.png)
+These capabilities you tested can be programmed in all types of applications. The keys and connection point used for application development can be found in both Content Safety Studio and Azure Portal.
 
-Puede ejecutar pruebas en todas las muestras proporcionadas y, a continuación, inspeccionar los resultados.
+In Content Safety Studio, return to the Configuration page, with the Resources tab selected. Find the resource you used. Scroll here to see the resource's connection point and key.
 
+<p align="center">            
+<img src="image-29.png" width="500" height="500">
+<br ><em><strong>Finding the resource's connection point and key in Content Safety Studio.</strong></em><br />
+</p>
 
+In the Azure Portal, you will see that this is the same connection point and different keys for the resource. To check this, go to the Azure Portal. Search for Content Security in the top search bar. Find your resource and click on it. In the left menu, look under Resource Management for keys and logon points. Select Keys and Connection Points to view the resource's connection point and keys.
 
+<p align="center">            
+<img src="image-30.png" width="500" height="500">
+<br ><em><strong>Azure portal view of keys and connection points.</strong></em><br />
+</p>
 
-Echa un vistazo a las claves y al punto de conexión
-Estas capacidades que probó se pueden programar en todo tipo de aplicaciones. Las claves y el punto de conexión que se usan para el desarrollo de aplicaciones se pueden encontrar tanto en Content Safety Studio como en Azure Portal.
-
-En Content Safety Studio, vuelva a la página Configuración, con la pestaña Recursos seleccionada. Busca el recurso que utilizaste. Desplácese por aquí para ver el punto de conexión y la clave del recurso.
-![alt text](image-29.png)
-
-En el Portal de Azure, verá que se trata del mismo punto de conexión y claves diferentes para el recurso. Para comprobarlo, diríjase al Portal de Azure. Busque Seguridad de contenido en la barra de búsqueda superior. Busque su recurso y haga clic en él. En el menú de la izquierda, busque en Administración de recursos para claves y puntos de conexión. Seleccione Claves y puntos de conexión para ver el punto de conexión y las claves del recurso.
-![alt text](image-30.png)
-
-
-
-NOTA: Una vez que haya terminado, puede eliminar el recurso de seguridad de contenido del Portal de Azure. La eliminación del recurso es una manera de reducir los costos que se acumulan cuando el recurso existe en la suscripción. Para ello, vaya a la página Información general del recurso de seguridad del contenido. Seleccione Eliminar en la parte superior de la pantalla.
-
+**NOTE:** Once you are finished, you can delete the content security resource from the Azure Portal. Removing the resource is a way to reduce the costs that accrue when the resource exists in the subscription. To do this, go to the Content Security Resource Overview page. Select Delete at the top of the screen.
