@@ -238,6 +238,13 @@ Wait for the job to finish. It may take a while, now might be a good time to hav
 
 ### Check the best model
 
+<p align="center">            
+<img src="https://github.com/JoseEmmanuelVG/Microsoft_Student_Technical_Training_MLSA-JEVG/assets/89156254/1322afc1-5aba-4da7-924b-81a83fae6d4b" width="600" height="300">
+<br ><em><strong>It isnt finish.</strong></em><br />
+</p>
+
+
+
 Once the automated machine learning job is finished, you can review the best model you have trained.
 
 In the Automated Machine Learning Job Overview tab, note the best model summary. Screenshot of the best model summary from the automated machine learning job with a box around the algorithm name.
