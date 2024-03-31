@@ -1,3 +1,10 @@
+Exploración del aprendizaje automático automatizado en Azure Machine Learning
+
+En este ejercicio, usará la característica de aprendizaje automático automatizado de Azure Machine Learning para entrenar y evaluar un modelo de aprendizaje automático. A continuación, implementará y probará el modelo entrenado.
+
+
+
+
 Creación de un área de trabajo de Azure Machine Learning
 Para usar Azure Machine Learning, debe aprovisionar un área de trabajo de Azure Machine Learning en la suscripción de Azure. A continuación, podrá usar Azure Machine Learning Studio para trabajar con los recursos del área de trabajo.
 
@@ -189,3 +196,10 @@ Seleccione el texto en Nombre del algoritmo para ver el mejor modelo para ver su
 Seleccione la pestaña Métricas y seleccione los gráficos de valores residuales y predicted_true si aún no están seleccionados.
 
 Revise los gráficos que muestran el rendimiento del modelo. El gráfico de residuos muestra los valores residuales (las diferencias entre los valores predichos y reales) como un histograma. El gráfico predicted_true compara los valores predichos con los valores reales.
+
+
+
+
+NOTA:
+Una vez que haya terminado, puede eliminar el recurso de seguridad de contenido del Portal de Azure. La eliminación del recurso es una manera de reducir los costos que se acumulan cuando el recurso existe en la suscripción. Para ello, vaya a la página Información general del recurso de seguridad del contenido. Seleccione Eliminar en la parte superior de la pantalla.
+
