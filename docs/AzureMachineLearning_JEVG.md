@@ -244,18 +244,104 @@ Wait for the job to finish. It may take a while, now might be a good time to hav
 </p>
 
 
+***then ...***
 
-Once the automated machine learning job is finished, you can review the best model you have trained.
+Once the automated machine learning job is finished, you can review the best model you have trained. In the Automated Machine Learning Job Overview tab, note the best model summary. This screenshot shows the best model summary with a box around the algorithm name.
 
-In the Automated Machine Learning Job Overview tab, note the best model summary. Screenshot of the best model summary from the automated machine learning job with a box around the algorithm name.
+<p align="center">
+<img src="image-58.png" width="500" height="300">
+<br><em><strong>Best model summary from the automated machine learning job.</strong></em><br/>
+</p>
 
-**Note** You may see a message in the status "Warning: User specified output score has been reached...". This is an expected message. Proceed to the next step.
+**Note:** You may see a message in the status "Warning: User specified output score has been reached...". This is an expected message. Proceed to the next step.
 
 Select the text in Algorithm name to see the best model to view its details.
 
+<p align="center">
+<img src="image-59.png" width="500" height="300">
+<br><em><strong>Algorithm details of the best model.</strong></em><br/>
+</p>
+
 Select the Metrics tab and select the residuals and predicted_true graphs if they are not already selected.
 
+<p align="center">
+<img src="image-60.png" width="500" height="300">
+<br><em><strong>Residuals graph showing the differences between predicted and actual values.</strong></em><br/>
+</p>
+
 Review the graphs that show the performance of the model. The residuals plot shows the residual values (the differences between the predicted and actual values) as a histogram. The predicted_true plot compares the predicted values with the actual values.
+
+<p align="center">
+<img src="image-61.png" width="400" height="175">
+<img src="image-62.png" width="400" height="175">
+
+<br><em><strong>Predicted vs. True values plot.</strong></em><br/>
+</p>
+
+### Deploy and Test the Model
+
+On the Model tab for the best model trained by your automated machine learning job, select Deploy and use the Web service option to deploy the model with the following settings:
+
+- **Name:** predict-rentals
+- **Description:** Predict cycle rentals
+- **Compute type:** Azure Container Instance
+- **Enable authentication:** Selected
+
+Wait for the deployment to start - this may take a few seconds. The Deploy status for the predict-rentals endpoint will be indicated in the main part of the page as Running.
+
+Wait for the Deploy status to change to Succeeded. This may take 5-10 minutes.
+
+#### Test the Deployed Service
+
+Now you can test your deployed service.
+
+In Azure Machine Learning studio, on the left hand menu, select Endpoints and open the predict-rentals real-time endpoint.
+
+On the predict-rentals real-time endpoint page, view the Test tab. In the Input data to test endpoint pane, replace the template JSON with the following input data:
+
+```json
+{
+  "Inputs": { 
+    "data": [
+      {
+        "day": 1,
+        "mnth": 1,   
+        "year": 2022,
+        "season": 2,
+        "holiday": 0,
+        "weekday": 1,
+        "workingday": 1,
+        "weathersit": 2, 
+        "temp": 0.3, 
+        "atemp": 0.3,
+        "hum": 0.3,
+        "windspeed": 0.3 
+      }
+    ]    
+  },   
+  "GlobalParameters": 1.0
+}
+```
+
+Click the Test button and review the test results, which include a predicted number of rentals based on the input features - similar to this:
+
+```json
+ {
+   "Results": [
+     444.27799000000000
+   ]
+ }
+ ```
+The test pane took the input data and used the model you trained to return the predicted number of rentals.
+
+
+
+## Clean-up
+
+The web service you created is hosted in an Azure Container Instance. If you don’t intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage.
+
+
+
 
 **NOTE:** Once you are done, you can delete the content security resource from the Azure Portal. Removing the resource is one way to reduce the costs that accrue when the resource exists in the subscription. To do this, go to the Content Security Resource Overview page. Select Delete at the top of the screen.
 

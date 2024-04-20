@@ -16,8 +16,13 @@ To complete these exercises, you’ll need a Microsoft Azure subscription. You c
 - ### [My report: Azure AI Services](docs/AzureAIServices_JEVG.md)
 
 #### Explore Generative AI with Microsoft Copilot
-- **Generative AI Microsoft Copilot Exercise:** [View Exercise](https://microsoftlearning.github.io/mslearn-ai-fundamentals/Instructions/Labs/01-machine-learning.html)
+- **Generative AI Microsoft Copilot Exercise:** [View Exercise](https://microsoftlearning.github.io/mslearn-ai-fundamentals/Instructions/Labs/13-azure-openai.html)
 - ### [My report: Generative AI Microsoft Copilot](docs/GenerativeAIMicrosoftCopilot_JEVG.md)
+
+
+#### Explore Azure OpenAI
+- [View Exercise](https://microsoftlearning.github.io/mslearn-ai-fundamentals/Instructions/Labs/01-machine-learning.html)
+- ### [My report: Explore Azure OpenAI Studio](docs/ExploreAzureOpenAI_JEVG.md.md)
 
 
 <details>
