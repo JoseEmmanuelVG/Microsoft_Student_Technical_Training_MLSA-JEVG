@@ -22,7 +22,7 @@ To complete these exercises, you’ll need a Microsoft Azure subscription. You c
 
 #### Explore Azure OpenAI
 - [View Exercise](https://microsoftlearning.github.io/mslearn-ai-fundamentals/Instructions/Labs/01-machine-learning.html)
-- ### [My report: Explore Azure OpenAI Studio](docs/ExploreAzureOpenAI_JEVG.md.md)
+- ### [My report: Explore Azure OpenAI Studio](docs/ExploreAzureOpenAI_JEVG.md)
 
 
 <details>
